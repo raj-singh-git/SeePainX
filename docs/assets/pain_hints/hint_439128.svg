@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1273">
+  <rect width="900" height="1273" fill="none"/>
+  <g opacity="0.78">
+    <circle cx="450" cy="540" r="62" fill="#ffffff" stroke="#2c6f86" stroke-width="6"/>
+    <path d="M420 570l60-60M420 510h60v60" fill="none" stroke="#2c6f86" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="450" y="650" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" font-weight="700" fill="#17242b">Ctrl + wheel zooms</text>
+  </g>
+</svg>
