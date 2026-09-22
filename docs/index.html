@@ -4,216 +4,101 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SeePainX Documentation</title>
-  <meta name="description" content="User documentation for SeePainX, a research tool for pain drawing acquisition, normalization, questionnaire capture, pain profile generation, and classification." />
+  <meta name="description" content="Documentation for SeePainX pain drawing acquisition, questionnaire data collection, normalization, and pain-profile analysis." />
   <link rel="icon" href="assets/icons/SeePainX.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="overview">
     <nav class="topbar" aria-label="Documentation navigation">
-      <a class="brand" href="#overview">
-        <img src="assets/icons/SeePainX.png" alt="SeePainX icon" />
-        <span>SeePainX</span>
-      </a>
+      <a class="brand" href="#overview">SeePainX</a>
       <div class="nav-links">
-        <a href="#workflow">Workflow</a>
-        <a href="#pages">Pages</a>
-        <a href="#icons">Icons</a>
-        <a href="#classification">Classification</a>
+        <a href="#modes">Modes</a><a href="#workflows">Workflows</a><a href="#authors">Authors</a><a href="#license">License</a>
       </div>
     </nav>
-    <section class="hero" id="overview">
-      <div>
-        <p class="eyebrow">SeePainX 1.0 documentation</p>
-        <h1>Pain Drawing Acquisition, Normalization, Questionnaire Data, Analysis, and Classification in One Research Workflow.</h1>
-        <p class="lead">SeePainX helps researchers organize pain drawing data, normalize scans to a common template, collect structured questionnaire information, generate pain profiles, and run pain drawing classification experiments.</p>
-        <div class="hero-actions">
-          <a href="#quick-start">Quick start</a>
-          <a href="#icons">Icon guide</a>
-        </div>
-      </div>
-      <figure class="hero-card">
-        <img src="assets/icons/SeePainX.png" alt="SeePainX application icon" />
-        <figcaption>Research software for pain drawing workflows.</figcaption>
-      </figure>
-    </section>
+    <div class="identity">
+      <img src="assets/icons/SeePainX.png" alt="SeePainX application icon" />
+      <p class="product-caption">Research software for structured pain drawing workflows</p>
+    </div>
+    <h1>SeePainX</h1>
+    <div class="workflow-line" aria-label="SeePainX workflows">
+      <a href="#acquisition">PD Acquisition</a><span></span><a href="#questionnaire">Questionnaire Data Collection</a><span></span><a href="#normalization">Normalization</a><span></span><a href="#analysis">Analysis</a>
+    </div>
+    <p class="intro">SeePainX provides a unified desktop workflow for acquiring digital pain drawings, collecting structured questionnaire responses, normalizing scanned pain drawings to a common anatomical reference, and generating cohort-level pain profiles. The application separates patient-facing data entry from clinician-facing configuration and processing while keeping templates, input data, and outputs organized in a consistent file structure.</p>
   </header>
 
   <main>
-    <section class="notice">
-      <strong>Research use notice</strong>
-      <span>SeePainX is intended for research use only. It is not a certified medical device and must not be used as the sole basis for diagnosis, treatment, or clinical decision-making.</span>
-    </section>
+    <aside class="research-notice"><strong>Research use only</strong><p>SeePainX is not a certified medical device and must not be used as the sole basis for diagnosis, treatment, or clinical decision-making.</p></aside>
 
-    <section id="quick-start" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Quick start</p>
-        <h2>Prepare the three main folders</h2>
-      </div>
-      <div class="steps">
-        <article>
-          <span class="step-number">1</span>
-          <h3>Select Template</h3>
-          <p>Use <b>File</b> to select the template folder. SeePainX also ships with built-in templates and masks so users can start without manually copying template files.</p>
-        </article>
-        <article>
-          <span class="step-number">2</span>
-          <h3>Select Input</h3>
-          <p>Select the folder containing scans, images, PDFs, SVGs, or other supported pain drawing files. The left window shows the content in a tree structure.</p>
-        </article>
-        <article>
-          <span class="step-number">3</span>
-          <h3>Select Output</h3>
-          <p>Select the folder where generated files, normalized outputs, reports, and classification results should be saved.</p>
-        </article>
-        <article>
-          <span class="step-number">4</span>
-          <h3>Choose a page</h3>
-          <p>Use the top page buttons to move between Normalize, PainAcquisition, Questionnaire, and Analyze. The side windows remain available across pages.</p>
-        </article>
+    <section class="section" id="modes">
+      <header class="section-heading"><p class="eyebrow">Access modes</p><h2>Purpose-specific interfaces</h2><p>SeePainX limits visible tools according to the active role so participants can focus on data entry while clinicians retain control over templates and processing.</p></header>
+      <div class="mode-grid">
+        <article><div class="mode-label">Patient mode</div><h3>Focused data entry</h3><ul>
+          <li>Provides access to PD Acquisition and Questionnaire only.</li><li>Shows approved anatomical and questionnaire templates.</li><li>Allows drawing, answering, clearing, and saving participant data.</li><li>Prevents modification of questionnaire questions and template structure.</li><li>Keeps normalization, analysis, and unrelated study data unavailable.</li>
+        </ul></article>
+        <article><div class="mode-label clinician">Clinician mode</div><h3>Configuration and analysis</h3><ul>
+          <li>Provides access to all four workflow pages.</li><li>Creates and edits questionnaire templates.</li><li>Configures workflow parameters and output formats.</li><li>Runs normalization and pain-profile generation.</li><li>Reviews outputs, quality measures, logs, and organized result files.</li>
+        </ul></article>
       </div>
     </section>
 
-    <section id="workflow" class="section split">
-      <div>
-        <p class="eyebrow">Core workflow</p>
-        <h2>What SeePainX does</h2>
-        <p>SeePainX is designed around a complete pain drawing workflow. It can load raw pain drawings, normalize them to a consistent template, collect new pain drawings interactively, save questionnaire responses in spreadsheet form, generate class-level pain profiles, and classify selected or batch-loaded pain drawings.</p>
-        <p>The app uses a persistent left file tree for Template, Input, and Output folders. Files can be opened into tabbed work areas, and most pages support multiple tabs for side-by-side review.</p>
-      </div>
-      <div class="workflow-card">
-        <div>Template and masks</div>
-        <span></span>
-        <div>Input scans or drawings</div>
-        <span></span>
-        <div>Normalization</div>
-        <span></span>
-        <div>Questionnaire and analysis</div>
-        <span></span>
-        <div>Output results</div>
-      </div>
-    </section>
+    <section class="section workflow-section" id="workflows">
+      <header class="section-heading"><p class="eyebrow">Application guide</p><h2>Four connected workflows</h2><p>Each page follows the same tabbed workspace, file-tree, parameter, and output conventions, while exposing tools specific to its task.</p></header>
 
-    <section id="pages" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Pages</p>
-        <h2>The four main work areas</h2>
-      </div>
-      <div class="page-grid">
-        <article>
-          <h3>Normalize</h3>
-          <p>Normalize raw pain drawing scans or files using a selected template. The output folder is updated with normalized files and available quality information such as alignment score and mean error when present.</p>
-          <ul>
-            <li>Select a template file or use the bundled template folder.</li>
-            <li>Select an input folder containing raw files.</li>
-            <li>Select an output folder for normalized results.</li>
-            <li>Run normalization from the left rail. Output files appear in the left tree while processing.</li>
-          </ul>
-        </article>
-        <article>
-          <h3>PainAcquisition</h3>
-          <p>Collect new pain drawings directly on a template. Users can draw, erase, pan, zoom, and save the drawing in app-supported output formats.</p>
-          <ul>
-            <li>Use the pencil tool to draw pain areas.</li>
-            <li>Use different colors to collect pain intensity: yellow indicates low intensity and darker colors move toward higher intensity, up to black.</li>
-            <li>Use the eraser to remove marks or strokes.</li>
-            <li>Save manually or let the app autosave after editing.</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Questionnaire</h3>
-          <p>Create and complete structured questionnaire forms. Text fields, bullet/checklist items, tables, and image blocks can be used for patient or study information.</p>
-          <ul>
-            <li>Responses are saved into a spreadsheet-oriented structure.</li>
-            <li>Tables can store structured entries such as time points, days, and checkboxes.</li>
-            <li>Images such as pain drawings can be referenced by image id and path.</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Analyze</h3>
-          <p>Generate pain profiles and run pain drawing classification workflows. Analyze contains tools for profile generation and classification using selected classes.</p>
-          <ul>
-            <li>Generate pain profiles from organized inputs.</li>
-            <li>Classify a single loaded image or run batch classification across the input folder.</li>
-            <li>Optionally normalize before classification when needed.</li>
-            <li>Save classification results to the selected output folder.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+      <article class="workflow" id="acquisition">
+        <header class="workflow-heading"><span class="workflow-number">01</span><div><p class="eyebrow">Patient and clinician</p><h3>PD Acquisition</h3><p>Collect pain markings directly on a standardized anatomical template using a mouse, touch input, or supported digital pen.</p></div></header>
+        <div class="detail-grid">
+          <div><h4>Template and canvas</h4><ul><li>Opens the configured front-and-back anatomical template by default.</li><li>Loads bundled PD templates or templates selected from the PD Template folder.</li><li>Uses the matching anatomical mask to restrict drawing to valid body regions.</li><li>Supports multiple draggable tabs, fit-to-window viewing, zooming, and panning.</li></ul></div>
+          <div><h4>Drawing tools</h4><ul><li><b>Brush:</b> records pain regions with selectable intensity colors and adjustable size.</li><li><b>Opacity:</b> changes brush opacity using fixed stepped values.</li><li><b>Eraser:</b> removes complete strokes or selected stroke areas, according to settings.</li><li><b>Move and fit:</b> reposition or refit the anatomical page without changing the drawing.</li><li><b>Clear:</b> removes all markings from the active tab after confirmation.</li></ul></div>
+          <div class="save-panel"><h4>Saving</h4><p>Use <b>Save</b> to write the active pain drawing to the selected Output folder. Files are named from the participant ID, template code, date, and time. If the same filename already exists, SeePainX asks whether to replace it or save a newly named copy. Saving is blocked until an Output folder is selected.</p></div>
+        </div>
+      </article>
 
-    <section id="classification" class="section split">
-      <div>
-        <p class="eyebrow">Classification</p>
-        <h2>Classify pain drawings</h2>
-        <p>The classification view supports single-image and batch operation. Users select classes in the model block, optionally enable normalization, and run the classifier. The selected class profiles appear in the output area, and the predicted class is highlighted after classification.</p>
-        <p>For batch use, leave the image block empty, select the classes and normalization option if required, then run. SeePainX processes the input folder and saves the results as a spreadsheet in the output folder.</p>
-      </div>
-      <div class="classifier-card">
-        <div class="block">Raw scan</div>
-        <div class="arrow">to</div>
-        <div class="block small">Normalize optional</div>
-        <div class="arrow">to</div>
-        <div class="block small">Run model</div>
-        <div class="arrow">to</div>
-        <div class="block">Predicted class</div>
-      </div>
-    </section>
+      <article class="workflow" id="questionnaire">
+        <header class="workflow-heading"><span class="workflow-number">02</span><div><p class="eyebrow">Structured study data</p><h3>Questionnaire Data Collection</h3><p>Create reusable questionnaire templates in Clinician mode and collect protected participant responses in Patient mode.</p></div></header>
+        <div class="detail-grid">
+          <div><h4>Template authoring</h4><ul><li><b>Text:</b> adds a question with a free-text answer field.</li><li><b>Checklist:</b> creates multiple Boolean options; Enter adds an option and Shift+Enter inserts a line break.</li><li><b>Table:</b> adds structured rows and columns, with controls for adding, removing, and inserting checkbox cells.</li><li><b>Image:</b> adds a clinician-selected reference image for a visual question.</li><li><b>Formatting:</b> provides bold, italic, underline, alignment, list, undo, and redo controls.</li><li><b>Locking:</b> protects questions and structure while leaving answer fields editable for participants.</li></ul></div>
+          <div><h4>Participant workflow</h4><ul><li>Load an approved questionnaire from the Quest Template folder.</li><li>Complete text fields, checklist options, and editable table cells.</li><li>Use the clear-answer control to prepare the same template for the next participant.</li><li>Question text, table structure, and reference images remain protected in Patient mode.</li><li>Completion progress reflects the number of answered questionnaire subwindows.</li></ul></div>
+          <div class="save-panel"><h4>Saving</h4><p>Clinicians save questionnaire templates as JSON files in the selected Output folder. Patient responses are appended to one template-specific Excel workbook: each participant occupies a structured record, questions define the columns, checklist values are stored as <b>True</b> or <b>False</b>, tables retain their row-and-column arrangement, and the save date and time are recorded.</p></div>
+        </div>
+      </article>
 
-    <section id="icons" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Icon guide</p>
-        <h2>Common controls</h2>
-      </div>
-      <div class="icon-grid">
-        <article><b>Run</b><span>Starts the workflow for the current page, such as normalization, analysis, classification, or batch operation.</span></article>
-        <article><b>Pause</b><span>Temporarily pauses a running workflow when supported.</span></article>
-        <article><b>Stop</b><span>Stops or cancels the active workflow.</span></article>
-        <article><b>Clock</b><span>Schedules a workflow when another run is already active.</span></article>
-        <article><b>Settings</b><span>Opens application settings, including appearance and license information.</span></article>
-        <article><b>Feedback</b><span>Shows contact information for feedback, bugs, and feature requests.</span></article>
-        <article><b>Folder</b><span>Represents Template, Input, and Output folders in the left tree.</span></article>
-        <article><b>Search</b><span>Searches within a selected folder tree.</span></article>
-        <article><b>Reload</b><span>Reloads folder contents from disk.</span></article>
-        <article><b>Plus and minus</b><span>Expand or collapse folders, add tabs, and enlarge or restore selected panels.</span></article>
-        <article><b>Pencil</b><span>Draws pain markings on the PainAcquisition template.</span></article>
-        <article><b>Eraser</b><span>Removes selected drawing marks or strokes.</span></article>
-        <article><b>Move</b><span>Pans the active canvas or image view.</span></article>
-        <article><b>Save</b><span>Saves PainAcquisition or Questionnaire data.</span></article>
-        <article><b>Trash</b><span>Deletes or clears the active drawing, questionnaire block, table row/column, or analysis tabs depending on context.</span></article>
-        <article><b>Fit</b><span>Fits the loaded image, SVG, or PDF page into the current tab window.</span></article>
-        <article><b>Person</b><span>Analyze page pain profile generation.</span></article>
-        <article><b>Network</b><span>Analyze page classification mode.</span></article>
-        <article><b>Bold, italic, underline</b><span>Text formatting controls for questionnaire content.</span></article>
-        <article><b>Rows and columns</b><span>Changes tab layout or table structure depending on page context.</span></article>
-      </div>
+      <article class="workflow" id="normalization">
+        <header class="workflow-heading"><span class="workflow-number">03</span><div><p class="eyebrow">Clinician mode</p><h3>Normalization</h3><p>Register scanned pain drawings to a common anatomical template so corresponding anatomy occupies consistent pixel coordinates.</p></div></header>
+        <div class="detail-grid">
+          <div><h4>Inputs and registration</h4><ul><li>Select PD Template, Input, and Output folders from the file manager.</li><li>Select the required template by clicking it in the PD Template tree.</li><li>Convert PDF, SVG, and raster inputs to the configured grayscale resolution.</li><li>Use enabled ORB, SIFT, and LSD feature combinations to form registration candidates.</li><li>Evaluate enabled global and local homographies and select the highest normalization score.</li><li>Trigger larger descriptors when the configured score criterion requires reevaluation.</li></ul></div>
+          <div><h4>Processing and quality control</h4><ul><li>Use template-guided nearest-neighbor distances to calculate accuracy and mean pixel error.</li><li>Remove thin anatomical outlines with optional morphological processing.</li><li>Apply the template mask to suppress marks outside the anatomical region.</li><li>Overlay retained pain regions onto the clean template when template overlay is enabled.</li><li><b>Run/Pause:</b> starts or pauses the active batch; <b>Stop</b> terminates all workers.</li><li>The run panel reports device use, paths, progress, filename, accuracy, and mean error.</li></ul></div>
+          <div class="save-panel"><h4>Saving</h4><p>Normalized files are written to the selected Output folder in the enabled global formats. A single organized Excel report records each image, selected feature method, descriptor scale, homography values, quality metrics, parameters, and final path. Optional distance arrays and analysis artifacts are created only when enabled.</p></div>
+        </div>
+      </article>
+
+      <article class="workflow" id="analysis">
+        <header class="workflow-heading"><span class="workflow-number">04</span><div><p class="eyebrow">Clinician mode</p><h3>Analysis</h3><p>Aggregate organized pain drawings by class to generate interpretable spatial pain-frequency profiles.</p></div></header>
+        <div class="detail-grid">
+          <div><h4>Pain-profile generation</h4><ul><li>Groups input files according to their class or subfolder.</li><li>Converts inputs and the selected template to grayscale, resizes them, and applies binary thresholding.</li><li>Removes the anatomical outline using morphology or template subtraction.</li><li>Optionally preserves low, medium, and high drawing intensities as separate profiles.</li><li>Accumulates valid pixels across participants and applies the anatomical mask.</li><li>Applies minimum-overlap, clipping, or quantile settings before heatmap rendering.</li></ul></div>
+          <div><h4>Visualization and controls</h4><ul><li>Creates a single-intensity profile by default or four intensity profiles when enabled.</li><li>Maps nonzero occurrence frequencies from the selected low-frequency color to dark red.</li><li>Displays one adaptive frequency bar for the currently selected pain-profile tab.</li><li>Can save relative-frequency, cumulative-frequency, and quantile histograms.</li><li>Loads newly generated profiles into available tabs during processing.</li><li><b>Run/Pause</b> and <b>Stop</b> provide the same controlled batch behavior as Normalization.</li></ul></div>
+          <div class="save-panel"><h4>Saving</h4><p>Each class-level pain profile is saved under a <b>pain_profile</b> directory in the selected Output folder and only in globally enabled formats. When analysis-step export is enabled, representative preprocessing images, accumulated maps, masks, frequency bars, and statistical plots are stored separately for inspection.</p></div>
+        </div>
+      </article>
     </section>
 
     <section class="section">
-      <div class="section-head">
-        <p class="eyebrow">Good practice</p>
-        <h2>Working safely with study data</h2>
-      </div>
-      <div class="practice-grid">
-        <article>
-          <h3>Use organized folders</h3>
-          <p>Keep templates, raw input, normalized output, questionnaire results, and analysis results in separate folders so that the file tree remains clear.</p>
-        </article>
-        <article>
-          <h3>Check outputs</h3>
-          <p>After normalization or classification, inspect sample results and review any generated scores, errors, or spreadsheet entries.</p>
-        </article>
-        <article>
-          <h3>Protect sensitive information</h3>
-          <p>Avoid storing unnecessary personal information in filenames. Use study ids or anonymized identifiers where appropriate.</p>
-        </article>
-      </div>
+      <header class="section-heading"><p class="eyebrow">Data practice</p><h2>Study data organization</h2></header>
+      <div class="guidance-grid"><article><strong>Separate source and result data</strong><p>Keep templates, raw inputs, questionnaire templates, participant results, normalized files, and analysis outputs in clearly separated directories.</p></article><article><strong>Use anonymous identifiers</strong><p>Avoid participant names and unnecessary personal information in filenames. Prefer study-specific pseudonymous IDs.</p></article><article><strong>Inspect generated outputs</strong><p>Review representative normalized drawings, alignment metrics, questionnaire columns, and pain profiles before downstream analysis.</p></article></div>
+    </section>
+
+    <section class="section authors" id="authors">
+      <header class="section-heading"><p class="eyebrow">Authors and contact</p><h2>SeePainX contributors</h2></header>
+      <div class="author-grid"><article><strong>M.Sc. Rajababu Udainarayan Singh</strong><a href="mailto:raj.singh@ostfalia.de">raj.singh@ostfalia.de</a></article><article><strong>M.Sc. Lennie Frederik Meyn</strong><a href="mailto:le.meyn@ostfalia.de">le.meyn@ostfalia.de</a></article><article><strong>Dr. Kai Fabian Vahldiek</strong><a href="mailto:k.vahldiek@ostfalia.de">k.vahldiek@ostfalia.de</a></article><article><strong>Prof. Frank Klawonn</strong><a href="mailto:f.klawonn@ostfalia.de">f.klawonn@ostfalia.de</a></article></div>
+      <address>Ostfalia University of Applied Sciences<br />Salzdahlumer Str. 46/48, 38302 Wolfenbüttel, Germany</address>
+    </section>
+
+    <section class="section license" id="license">
+      <header class="section-heading"><p class="eyebrow">License</p><h2>Proprietary research software</h2></header>
+      <p>Copyright &copy; 2026 SeePainX contributors. All rights reserved.</p><p>Unauthorized copying, modification, distribution, publication, sublicensing, reverse engineering, or commercial use is prohibited without prior written permission from the contributors and/or the rights holder.</p>
     </section>
   </main>
 
-  <footer>
-    <span>SeePainX documentation</span>
-    <span>Research software documentation for users.</span>
-  </footer>
+  <footer><img src="assets/icons/SeePainX.png" alt="" /><div><strong>SeePainX</strong><span>Pain drawing research software documentation</span></div></footer>
 </body>
 </html>
