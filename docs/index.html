@@ -10,26 +10,18 @@
 </head>
 <body>
   <header class="site-header" id="overview">
-    <nav class="topbar" aria-label="Documentation navigation">
-      <a class="brand" href="#overview">SeePainX</a>
-      <div class="nav-links">
-        <a href="#modes">Modes</a><a href="#workflows">Workflows</a><a href="#authors">Authors</a><a href="#license">License</a>
-      </div>
-    </nav>
     <div class="identity">
       <img src="assets/icons/SeePainX.png" alt="SeePainX application icon" />
-      <p class="product-caption">Research software for structured pain drawing workflows</p>
     </div>
     <h1>SeePainX</h1>
     <div class="workflow-line" aria-label="SeePainX workflows">
       <a href="#acquisition">PD Acquisition</a><span></span><a href="#questionnaire">Questionnaire Data Collection</a><span></span><a href="#normalization">Normalization</a><span></span><a href="#analysis">Analysis</a>
     </div>
     <p class="intro">SeePainX provides a unified desktop workflow for acquiring digital pain drawings, collecting structured questionnaire responses, normalizing scanned pain drawings to a common anatomical reference, and generating cohort-level pain profiles. The application separates patient-facing data entry from clinician-facing configuration and processing while keeping templates, input data, and outputs organized in a consistent file structure.</p>
+    <hr class="opening-rule" />
   </header>
 
   <main>
-    <aside class="research-notice"><strong>Research use only</strong><p>SeePainX is not a certified medical device and must not be used as the sole basis for diagnosis, treatment, or clinical decision-making.</p></aside>
-
     <section class="section" id="modes">
       <header class="section-heading"><p class="eyebrow">Access modes</p><h2>Purpose-specific interfaces</h2><p>SeePainX limits visible tools according to the active role so participants can focus on data entry while clinicians retain control over templates and processing.</p></header>
       <div class="mode-grid">
@@ -59,7 +51,7 @@
         <div class="detail-grid">
           <div><h4>Template authoring</h4><ul><li><b>Text:</b> adds a question with a free-text answer field.</li><li><b>Checklist:</b> creates multiple Boolean options; Enter adds an option and Shift+Enter inserts a line break.</li><li><b>Table:</b> adds structured rows and columns, with controls for adding, removing, and inserting checkbox cells.</li><li><b>Image:</b> adds a clinician-selected reference image for a visual question.</li><li><b>Formatting:</b> provides bold, italic, underline, alignment, list, undo, and redo controls.</li><li><b>Locking:</b> protects questions and structure while leaving answer fields editable for participants.</li></ul></div>
           <div><h4>Participant workflow</h4><ul><li>Load an approved questionnaire from the Quest Template folder.</li><li>Complete text fields, checklist options, and editable table cells.</li><li>Use the clear-answer control to prepare the same template for the next participant.</li><li>Question text, table structure, and reference images remain protected in Patient mode.</li><li>Completion progress reflects the number of answered questionnaire subwindows.</li></ul></div>
-          <div class="save-panel"><h4>Saving</h4><p>Clinicians save questionnaire templates as JSON files in the selected Output folder. Patient responses are appended to one template-specific Excel workbook: each participant occupies a structured record, questions define the columns, checklist values are stored as <b>True</b> or <b>False</b>, tables retain their row-and-column arrangement, and the save date and time are recorded.</p></div>
+          <div class="save-panel questionnaire-saving"><h4>Template and response saving</h4><div><p>Clinicians save each completed questionnaire design as an individual JSON template in the selected Output folder. The template preserves the question order, text fields, checklist choices, table structure, reference images, and locked or editable state so that the same form can be used consistently for multiple participants.</p><p>When a participant submits answers in Patient mode, SeePainX creates one Excel workbook for that questionnaire template if no workbook exists. The worksheet header is generated from the saved template: each question receives an ordered column, image questions store the image name and path, and table questions retain their structured row-and-column fields. The participant's answers are written as one new record, checklist states are stored as <b>True</b> or <b>False</b>, and separate date and time values document the submission.</p><p>For every subsequent participant using the same questionnaire template, SeePainX opens the existing template-specific workbook and appends a new record without replacing earlier responses. Consequently, every questionnaire template has one corresponding Excel dataset containing all participant submissions in a consistent structure suitable for later statistical, AI, or machine-learning analysis.</p></div></div>
         </div>
       </article>
 
@@ -97,6 +89,8 @@
       <header class="section-heading"><p class="eyebrow">License</p><h2>Proprietary research software</h2></header>
       <p>Copyright &copy; 2026 SeePainX contributors. All rights reserved.</p><p>Unauthorized copying, modification, distribution, publication, sublicensing, reverse engineering, or commercial use is prohibited without prior written permission from the contributors and/or the rights holder.</p>
     </section>
+
+    <aside class="research-notice"><strong>Research use only</strong><p>SeePainX is not a certified medical device and must not be used as the sole basis for diagnosis, treatment, or clinical decision-making.</p></aside>
   </main>
 
   <footer><img src="assets/icons/SeePainX.png" alt="" /><div><strong>SeePainX</strong><span>Pain drawing research software documentation</span></div></footer>
